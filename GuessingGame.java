@@ -33,42 +33,41 @@ public class GuessingGame {
 
         System.out.println();
         System.out.println("I am thinking of a number from 1 to 100.");
+        System.out.println("You have 7 attempts.");
 
         while (attempts < 7 && !won) {
             System.out.print("Your guess: ");
-
             int guess = Integer.parseInt(scanner.nextLine().trim());
 
             if (guess < 1 || guess > 100) {
-                System.out.println(
-                        "Please guess a number from 1 to 100."
-                );
+                System.out.println("Please guess a number from 1 to 100.");
                 continue;
             }
 
             attempts++;
             won = checkGuess(guess, secret);
+
+            if (won) {
+                System.out.println("Attempts used: " + attempts);
+            }
         }
 
         if (!won) {
             System.out.println("Out of attempts! The number was: " + secret);
+            System.out.println("Attempts used: " + attempts);
         }
-
-        System.out.println("Attempts used: " + attempts);
     }
 
     static boolean checkGuess(int guess, int secret) {
         if (guess > secret) {
             System.out.println("Too high!");
             return false;
-        }
-
-        if (guess < secret) {
+        } else if (guess < secret) {
             System.out.println("Too low!");
             return false;
+        } else {
+            System.out.println("Correct!");
+            return true;
         }
-
-        System.out.println("Correct!");
-        return true;
     }
 }
