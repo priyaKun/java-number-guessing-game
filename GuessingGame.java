@@ -59,8 +59,8 @@ public class GuessingGame {
             System.out.println(
                     "Out of attempts. The number was " + secret + "."
             );
-            System.out.println("Attempts used: " + attempts);
         }
+
     }
 
     static boolean checkGuess(int guess, int secret) {
