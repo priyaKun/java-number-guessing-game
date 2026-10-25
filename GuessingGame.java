@@ -37,6 +37,7 @@ public class GuessingGame {
 
         while (attempts < 7 && !won) {
             System.out.print("Your guess: ");
+
             int guess = Integer.parseInt(scanner.nextLine().trim());
 
             if (guess < 1 || guess > 100) {
@@ -50,13 +51,13 @@ public class GuessingGame {
             won = checkGuess(guess, secret);
 
             if (won) {
-                System.out.println("Attempts used: " + attempts);
+                System.out.println(" Attempts used: " + attempts);
             }
         }
 
         if (!won) {
             System.out.println(
-                    "Out of attempts! The number was: " + secret
+                    "Out of attempts. The number was " + secret + "."
             );
             System.out.println("Attempts used: " + attempts);
         }
@@ -73,7 +74,7 @@ public class GuessingGame {
             return false;
         }
 
-        System.out.println("Correct!");
+        System.out.print("Correct!");
         return true;
     }
 }
