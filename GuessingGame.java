@@ -1,4 +1,3 @@
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -32,19 +31,15 @@ public class GuessingGame {
         int attempts = 0;
         boolean won = false;
 
-        System.out.println(
-                "I am thinking of a number from 1 to 100. You have 7 attempts."
-        );
+        System.out.println();
+        System.out.println("I am thinking of a number from 1 to 100. You have 7 attempts.");
 
         while (attempts < 7 && !won) {
             System.out.print("Your guess: ");
-
             int guess = Integer.parseInt(scanner.nextLine().trim());
 
             if (guess < 1 || guess > 100) {
-                System.out.println(
-                        "Please guess a number from 1 to 100."
-                );
+                System.out.println("Please guess a number from 1 to 100.");
                 continue;
             }
 
