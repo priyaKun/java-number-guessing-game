@@ -40,7 +40,9 @@ public class GuessingGame {
             int guess = Integer.parseInt(scanner.nextLine().trim());
 
             if (guess < 1 || guess > 100) {
-                System.out.println("Please guess a number from 1 to 100.");
+                System.out.println(
+                        "Please guess a number from 1 to 100."
+                );
                 continue;
             }
 
@@ -53,7 +55,9 @@ public class GuessingGame {
         }
 
         if (!won) {
-            System.out.println("Out of attempts! The number was: " + secret);
+            System.out.println(
+                    "Out of attempts! The number was: " + secret
+            );
             System.out.println("Attempts used: " + attempts);
         }
     }
@@ -62,12 +66,14 @@ public class GuessingGame {
         if (guess > secret) {
             System.out.println("Too high!");
             return false;
-        } else if (guess < secret) {
+        }
+
+        if (guess < secret) {
             System.out.println("Too low!");
             return false;
-        } else {
-            System.out.println("Correct!");
-            return true;
         }
+
+        System.out.println("Correct!");
+        return true;
     }
 }
